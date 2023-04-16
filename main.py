@@ -1,32 +1,28 @@
 
-evencnt = 0
+lognest = ''
+shortest = ''
 
 
 def main():
-    global evencnt
-    number = []
-    evencnt = 0
+    global longest, shortest
 
-    for i in range(10):
-        number.append(int(input()))
     ##################################################
     # Code your program here
     ##################################################
-    prev = 0
-    on = 0
-    for v in number:
-        if prev and not v % 2 and not on:
-            on = 1
-            evencnt += 1
-        if v % 2:
-            prev = 0
-            on = 0
-        else:
-            prev = 1
+    inputval = input()
+    shortest = longest = inputval
+    minlen = maxlen = len(shortest)
+    while inputval != 'stop' and inputval != 'STOP':
+        if minlen > len(inputval):
+            minlen = len(inputval)
+            shortest = inputval
+        if maxlen < len(inputval):
+            maxlen = len(inputval)
+            longest = inputval
+        inputval = input()
 
-    print(evencnt)
-
-##
+    print(longest)
+    print(shortest)
 
 
 if __name__ == '__main__':

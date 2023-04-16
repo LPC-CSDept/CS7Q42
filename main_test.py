@@ -9,7 +9,7 @@ def test_main_1():
     captureOut = io.StringIO()
     sys.stdout = captureOut
     # datastr = '10 5 20 0 40 45 50 55 9 10\n'
-    datastr = '1\n2\n17\n9\n15\n2\n4\n1\n10\n12'
+    datastr = 'program\npython\nJava\nC++\nstop'
     sys.stdin = io.StringIO(datastr)
 
     main.main()
@@ -26,14 +26,15 @@ def test_main_1():
     # res = re.search(regex_string, main.evenlist)
     # assert res != None
     # print(res.group())
-    assert main.evencnt == 2
+    assert main.shortest == 'C++'
+    assert main.longest == 'program'
 
 
 def test_main_2():
     captureOut = io.StringIO()
     sys.stdout = captureOut
     # datastr = '10 5 20 0 40 45 50 55 9 10\n'
-    datastr = '2\n4\n6\n5\n8\n10\n11\n12\n14\n20'
+    datastr = 'abc\nbbb\nxxx\nzz\nphp\nstop'
     sys.stdin = io.StringIO(datastr)
 
     main.main()
@@ -50,4 +51,5 @@ def test_main_2():
     # res = re.search(regex_string, main.evenlist)
     # assert res != None
     # print(res.group())
-    assert main.evencnt == 3
+    assert main.shortest == 'zz'
+    assert main.longest == 'abc'
