@@ -1,5 +1,5 @@
 
-lognest = ''
+longest = ''
 shortest = ''
 
 
